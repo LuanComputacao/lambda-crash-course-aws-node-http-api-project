@@ -23,8 +23,26 @@ functions:
     handler: src/index.addTodo
     events:
       - httpApi:
-          path: /
+          path: /todos
+          method: post
+  fetchTodos:
+    handler: src/index.fetchTodos
+    events:
+      - httpApi:
+          path: /todos
           method: get
+  fetchTodo:
+    handler: src/index.fetchTodo
+    events:
+      - httpApi:
+          path: /todos/{id}
+          method: get
+  updateTodo:
+    handler: src/index.updateTodo
+    events:
+      - httpApi:
+          path: /todos/{id}
+          method: put
 
 resources:
   Resources:
